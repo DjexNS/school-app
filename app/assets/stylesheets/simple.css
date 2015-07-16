@@ -1,0 +1,126 @@
+/*
+ * Simple CSS stylesheet for a navigation bar and flash messages.
+ */
+main {
+  background-color: #eee;
+  /*Opacity start*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.92;
+    -khtml-opacity: 0.92;
+    opacity: 0.92;
+    /*Opacity end*/
+  padding-bottom: 80px;
+  width: 100%;
+  }
+
+header {
+  border: 1px solid #d4d4d4;
+  background-image: linear-gradient(to bottom, white, #f2f2f2);
+  background-color: #f9f9f9;
+  
+/*Opacity start*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+    /*Opacity end*/
+
+  color: white;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+ul.nav li {
+  display: inline;
+}
+ul.nav li a {
+  padding: 10px 15px 10px;
+  color: #777777;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+}
+
+html { 
+  background: url(http://4.bp.blogspot.com/_2k6tBCiGYLw/S_xltvWXa9I/AAAAAAAAAXw/dkBc6MMyHcw/s1600/_MG_0450.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.flash_notice, .flash_alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+.flash_notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+}
+.flash_alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+
+
+.button {
+		position:relative;
+    transition: 1.5s ease;
+    top: 30px;
+    left: 0%;
+   border-top: 1px solid #5a5a5a;
+   background: #5a5a5a;
+   background: -webkit-gradient(linear, left top, left bottom, from(#5a5a5a), to(#5a5a5a));
+   background: -webkit-linear-gradient(top, #5a5a5a, #5a5a5a);
+   background: -moz-linear-gradient(top, #5a5a5a, #5a5a5a);
+   background: -ms-linear-gradient(top, #5a5a5a, #5a5a5a);
+   background: -o-linear-gradient(top, #5a5a5a, #5a5a5a);
+   padding: 15px 30px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 28px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #5a5a5a;
+   background: #5a5a5a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #5a5a5a;
+   background: #5a5a5a;
+   }
+
+.button.button1
+{
+
+    left: 30%;
+}
+
+.button.button2
+{
+
+    left: 42%;
+}
+

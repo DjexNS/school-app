@@ -1,0 +1,3 @@
+h1. Rails Devise Pundit - starter pack
+
+With a twist...

@@ -1,0 +1,34 @@
+<!-- -->
+
+<div class="create">
+  <div class="container">
+
+		<%= form_for Pupil.new, :url => {:action => :create, :controller => :pupils} do |p| %>
+			<div class="field"> 
+				<%= p.label :pupil %><br>
+				<br>
+				<%= p.text_area :name %> <br>
+				<br>
+				<%= p.radio_button(:gender, "male") %>
+				<%= label(:gender_male, "Male") %>
+				<%= p.radio_button(:gender, "female") %>
+				<%= label(:gender_female, "Female") %>		<br>
+				<br>
+				<%= label(:number_field, "School ID to which the student belongs: ") %>
+				<%= p.number_field :school_id %>
+				<br>
+				<%= label(:number_field, "Classroom ID to which the student belongs: ") %>
+				<%= p.number_field :classroom_id %>
+				<br>
+				<%= p.check_box(:special) %>
+				<%= label(:special, "Is this student handicapped?") %><br>
+				<br>
+
+			</div> 
+<br>
+			<div class="actions"> 
+				<%= p.submit "Create" %> 
+			</div> 
+		<% end %>	
+	</div>
+</div>

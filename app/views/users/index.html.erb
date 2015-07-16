@@ -1,0 +1,22 @@
+<!--ovo je view za Users tab-->
+
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+					<% if !current_user.nil? and current_user.admin? %>
+          	<% @users.each do |user| %>
+            	<tr>
+              	<%= render user %>
+            	</tr>
+          	<% end %>
+					<% end %>
+        </tbody>
+      </table>
+    </div>
+	
+  </div>
+</div>
+

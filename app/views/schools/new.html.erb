@@ -1,0 +1,17 @@
+<!-- -->
+<div class="create">
+  <div class="container">
+
+		<%= form_for(@school) do |s| %>
+			<div class="field"> 
+				<%= s.label :school %><br><br>
+				<%= s.text_area :title %> <br><br>
+				<%= s.number_field :number_of_classrooms %> 
+			</div> 
+<br>
+			<div class="actions"> 
+				<%= s.submit "Create" %> 
+			</div> 
+		<% end %>	
+	</div>
+</div>

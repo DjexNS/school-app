@@ -1,0 +1,19 @@
+<h2>Schools:</h2>
+
+<div class="schools">
+  <div class="container">
+
+		<% @schools.each do |school| %> 
+		<div class="school"> 
+			<p class="id">School ID: <%= school.id %></p> 
+			<p class="title">Name of the school: <%= school.title %></p> 
+			<p class="number">Number of classrooms in the school: <%= school.number_of_classrooms %></p> 
+			<p class="time">School created at: <%= school.created_at %></p></br>
+ 			<%= link_to 'Show School', :action => :show, :id => school.id %></br>
+			<br>	------------------------------------------------------------
+		</div> 
+
+		<% end %>
+		
+	</div> 
+</div> 

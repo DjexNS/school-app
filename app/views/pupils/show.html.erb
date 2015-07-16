@@ -1,0 +1,23 @@
+<!-- -->
+
+<% if @pupil.school_id == @school.id %>
+
+		<div class="pupil">
+  		<div class="container">
+   
+  				<p>Name of the pupil: <%= @pupil.name %></p>
+					<p>Pupil ID: <%= @pupil.id %></p>
+					<p>Handicapped?: <%= @pupil.special %></p>
+					<p>Gender: <%= @pupil.gender %></p>
+  		 		<p>School ID: <%= @pupil.school_id %></p>
+					<p>Classroom ID: <%= @pupil.classroom_id %></p>
+  
+	      <%= link_to "Edit", edit_school_pupil_path(params[:school_id], @pupil.id) %>
+    
+		  </div>
+		</div>
+
+		<%= link_to "Delete Pupil", school_pupil_path(params[:school_id], @pupil.id), method: :delete, data: {confirm: "You sure?"} %>
+
+
+<%end%>

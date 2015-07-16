@@ -1,0 +1,17 @@
+	<% @pupils.each do |pupil| %> 
+		<div class="pupil"> 
+			<p class="id">Pupil ID: <%= pupil.id %></p> 
+			<p class="name">Name of the pupil: <%= pupil.name %></p> 
+			<p class="gender">Gender of pupil: <%= pupil.gender %></p> 
+			<p class="special">Handicapped?: <%= pupil.special %></p>
+			<p class="school">School ID: <%= pupil.school_id %></p>
+			<p class="classroom">Classroom ID: <%= pupil.classroom_id %></p>
+			<p class="count">Number of pupils: <%= $total_count %></p> 
+		<%= link_to 'Show Pupil', :action => :show, :id => pupil.id %>
+ 	</br>
+	<br>	------------------------------------------------------------
+		</div> 
+
+		<% end %>
+
+

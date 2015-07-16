@@ -1,0 +1,50 @@
+<!-- -->
+<div class="school">
+  <div class="container">   
+  		<p>Name of the school: <%= @school.title %></p>
+			<p>School ID: <%= @school.id %></p>
+        <p>Number of classrooms: <%= @school.number_of_classrooms %></p>
+							<% @school.number_of_pupils = $total_count %>
+				<p>Number of pupils: <%= @school.number_of_pupils %></p></br>
+        <%= link_to "Edit School", edit_school_path(@school) %>    
+  </div>
+</div>		
+
+		<% if !$total_count.between?(90,110) %>
+				<%= link_to generate_pupils_path(@school), :class=> "button button3" do %>
+  					GENERATE PUPILS				
+				<% end %>
+		<% elsif %>
+				<h1><%= "There are enough students for this school. (Between 90 and 110)" %></h1>
+				<p>You should DISTRIBUTE them among classrooms!</p>
+				<%= link_to distribute_pupils_path(@school), :class=> "button button4" do %>
+  					DISTRIBUTE PUPILS				
+				<% end %>
+		<% end %>
+
+
+		</br>
+<%= link_to "Delete School", school_path(@school), method: :delete, data: {confirm: "You sure?"} %></br>
+</br>
+</br>
+<br>	------------------------------------------------------------ 
+	<h2>Students for this school: </h2>
+	------------------------------------------------------------ 
+			
+	<% @pupils.each do |pupil| %> 
+		<div class="pupil"> 
+			<p class="id">Pupil ID: <%= pupil.id %></p> 
+			<p class="name">Name of the pupil: <%= pupil.name %></p> 
+			<p class="gender">Gender of pupil: <%= pupil.gender %></p> 
+			<p class="special">Handicapped?: <%= pupil.special %></p>
+			<p class="school">School ID: <%= pupil.school_id %></p>
+			<p class="classroom">Classroom ID: <%= pupil.classroom_id %></p> 
+					<p class="count">Number of pupils: <%= $total_count %></p> 
+		<%= link_to 'Show Pupil', :controller => :pupils, :action => :show, :school_id => pupil.school_id, :id => pupil.id %>
+ 	</br>
+	<br>	------------------------------------------------------------
+		</div> 
+
+		<% end %>
+
+

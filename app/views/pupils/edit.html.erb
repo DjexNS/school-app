@@ -1,0 +1,32 @@
+<!-- -->
+<div class="pupil">
+  <div class="container">
+   
+    <%= form_for [params[:school_id], @pupil], :url => school_pupil_path(params[:school_id], @pupil) do |p| %>		
+			
+      <%= p.text_area :name %></br>
+			<br>
+			<%= p.radio_button(:gender, "male") %>
+			<%= label(:gender_male, "Male") %>
+			<%= p.radio_button(:gender, "female") %>
+			<%= label(:gender_female, "Female") %><br>
+			<br>
+			<br>
+			<%= p.check_box(:special) %>
+			<%= label(:special, "Is this student handicapped?") %><br>
+			<br>
+			<%= label(:number_field, "School ID to which the student belongs: ") %>
+			<%= p.number_field :school_id %>
+			</br>
+			<%= label(:number_field, "Classroom ID to which the student belongs: ") %>
+			<%= p.number_field :classroom_id %>
+			</br>
+			<br>
+		
+      <%= p.submit "Update", :class => "btn" %>
+    <% end %> 
+    
+  </div>
+</div> 
+
+

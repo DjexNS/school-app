@@ -1,0 +1,27 @@
+<!--ovo je view za Home tab-->
+
+<h3>Home</h3>
+<% if !current_user.nil? and (current_user.admin? or current_user.dean?) %>
+  <% @users.each do |user| %>
+    <p>User: <%=link_to user.email, user %> Role: <%= user.role unless user.role.nil? %></p>
+  <% end %>
+
+		<!--<a href="/schools/new" class="button button1" id="dugme1">Create New School</a>-->
+		<%= link_to new_school_path(@school), :class=> "button button1" do %>
+  					Create New School				
+				<% end %>
+		
+		<!--	<script type="text/javascript">
+				function myFunction() 
+				{
+						document.getElementById("dugme2").style.visibility = "hidden";
+				}
+			</script>
+		-->
+		<!--<a href="/schools" class="button button2" id="dugme2">View Schools</a>-->
+		<%= link_to schools_path(@school), :class=> "button button2" do %>
+  					View Schools
+				<% end %>
+
+<% end %>
+			
