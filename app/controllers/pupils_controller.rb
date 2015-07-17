@@ -8,7 +8,7 @@ class PupilsController < ApplicationController
 	def index
 		@school = School.find(params[:school_id])		
 		@pupils = Pupil.where(:school_id => @school.id)
-		$total_count = Pupil.where(:school_id => @school.id).count
+		@total_count = Pupil.where(:school_id => @school.id).count
 
 		render template: 'shared/view'				
 	end
@@ -21,7 +21,8 @@ class PupilsController < ApplicationController
 
 	def show
 		@pupil = Pupil.find(params[:id])
-		@school = School.find(params[:school_id])			
+		@school = School.find(params[:school_id])
+		@total_count = Pupil.where(:school_id => @school.id).count
 	end
 	
 
@@ -63,7 +64,8 @@ class PupilsController < ApplicationController
 	def distribute
 		@school = School.find(params[:id])
 		@pupils = Pupil.where(:school_id => @school.id)
-
+		@total_count = Pupil.where(:school_id => @school.id).count
+		
 		school = School.find(params[:id])
 		@pupil = school.pupils.find(params[:id])
 

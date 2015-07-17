@@ -1,7 +1,7 @@
 class Pupil < ActiveRecord::Base
 	enum gender: [:male, :female]
-  
-  belongs_to :classroom
+	
+	belongs_to :classroom
 	belongs_to :school
 
 	def male?
@@ -11,5 +11,10 @@ class Pupil < ActiveRecord::Base
 	def female?
 		self.gender == 'female'
 	end
+
+	
+
+
+
 
 end

@@ -1,14 +1,4 @@
-<!-- -->
-<div class="school">
-  <div class="container"> 
-
-		<%= form_for(@school) do |s| %>			
-			<%= s.text_area :title %></br>
-			<%= s.number_field :number_of_classrooms %></br>
-			<%= s.submit "Update", :class => "btn" %>
-		<% end %> 
-    
-  </div>
-</div> 
+<%= render partial: "school", locals: {school: @school} %>    
+ 
 
 

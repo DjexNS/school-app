@@ -1,17 +1,13 @@
-<!-- -->
-<div class="school">
-  <div class="container">   
-  		<p>Name of the school: <%= @school.title %></p>
-			<p>School ID: <%= @school.id %></p>
-      <p>Number of classrooms: <%= @school.number_of_classrooms %></p>
-			<p><% @school.number_of_pupils = $total_count %></p>
-			<p>Number of pupils: <%= @school.number_of_pupils %></p></br>
+<p class="id">School ID: <%= @school.id %></p>
+<p class="title">Name of the school: <%= @school.title %></p>
+<p class="number">Number of classrooms: <%= @school.number_of_classrooms %></p>
+<p><% @school.number_of_pupils = @total_count %></p>
+<p>Number of pupils: <%= @school.number_of_pupils %></p></br>
 
-        <%= link_to "Edit", edit_school_path(@school) %>    
-  </div>
-</div>
-			<%= link_to generate_pupils_path(@school), :class=> "button button3" do %>
-  					GENERATE PUPILS				
-			<% end %></br>
+<%= link_to "Edit", edit_school_path(@school) %>    
 
-			<%= link_to "Delete School", school_path(@school), method: :delete, data: {confirm: "You sure?"} %></br>
+<%= link_to generate_pupils_path(@school), :class=> "button button3" do %>
+	GENERATE PUPILS
+<% end %></br>
+
+<%= link_to "Delete School", school_path(@school), method: :delete, data: {confirm: "You sure?"} %>

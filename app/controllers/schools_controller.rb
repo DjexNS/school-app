@@ -12,7 +12,6 @@ class SchoolsController < ApplicationController
 	def new
 		@school = School.new		
 	end
-	
 
 
 	def create 
@@ -47,8 +46,7 @@ class SchoolsController < ApplicationController
 
 
 	def destroy
-		@school = School.find(params[:id])
-		@school.destroy
+		@school = School.find(params[:id]).destroy
 		redirect_to schools_path, notice: "School deleted."
 	end
 
