@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
 	def index
-		@schools = School.all		
+		@schools = School.all
 	end
 
 

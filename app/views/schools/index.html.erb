@@ -3,9 +3,7 @@
 <% @schools.each do |school| %> 		
 	<p class="id">School ID: <%= school.id %></p> 
 	<p class="title">Name of the school: <%= school.title %></p> 
-	<p class="number">Number of classrooms in the school: <%= school.number_of_classrooms %></p> 
-	<p><% school.number_of_pupils = @total_count %></p>
-	<p>Number of pupils: <%= school.number_of_pupils %></p></br>
+	<p class="number">Number of classrooms in the school: <%= school.number_of_classrooms %></p>
 
 <%= link_to 'Show School', :action => :show, :id => school.id %></br>
 ------------------------------------------------------------

@@ -42,7 +42,7 @@ class Pupil < ActiveRecord::Base
 					classroom_female=@school.number_of_classrooms
 				end
 			ppl.update(classroom_id: classroom_female)
-			
 		end
 	end
+
 end
