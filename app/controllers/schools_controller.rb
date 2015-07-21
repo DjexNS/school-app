@@ -52,19 +52,15 @@ class SchoolsController < ApplicationController
 
 
 	def generate
-		@total_pupils = rand(90..110)
+
+		@total_pupils = 1#rand(90..110)
 		school = School.find(params[:id])		
-				
+		
 		@total_pupils.times do
-			Pupil.create(
-			name: FFaker::Name.name,
-			gender: FFaker::Gender.random,
-			classroom_id: 1, #!!!!
-			school_id: school.id
-			)
+			School.generate_pupils_for school
 		end
 
-		redirect_to school_path, notice: @total_pupils.to_s + " students generated!"		
+		redirect_to school_path, notice: "#{@total_pupils} students generated!"		
 	end
 
 

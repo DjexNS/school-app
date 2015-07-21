@@ -12,8 +12,16 @@ class Pupil < ActiveRecord::Base
 		self.gender == 'female'
 	end
 
-	
-
+=begin	
+	def self.create_pupils_for (school)		
+			Pupil.create(
+			name: FFaker::Name.name,
+			gender: FFaker::Gender.random,
+			classroom_id: 1, #!!!!
+			school_id: school.id
+			)		
+	end
+=end
 
 
 
