@@ -62,42 +62,11 @@ class PupilsController < ApplicationController
 
 
 	def distribute
-		@school = School.find(params[:id])
-		@pupils = Pupil.where(:school_id => @school.id)
-		@total_count = Pupil.where(:school_id => @school.id).count
-		
 		school = School.find(params[:id])
-		@pupil = school.pupils.find(params[:id])
+		@school = School.find(params[:id])
+		@pupils = Pupil.where(:school_id => school.id)
 
-		@male_pupils = Pupil.where(:gender => '0', :school_id => @school.id).count 
-		@female_pupils = $total_count - @male_pupils
-
-		@pupils_per_classroom = $total_count / @school.number_of_classrooms
-		@malePupilsPerClassroom = ((@male_pupils.to_f/$total_count.to_f) * @pupils_per_classroom).to_i
-		@femalePupilsPerClassroom = @pupils_per_classroom - @malePupilsPerClassroom
-
-		buffer_m=0
-		buffer_f=0
-		i=0
-		j=0
-#		@pupil.update(pupil_params)
-		@pupils.each do |ppl|
-			if ppl.gender == 0
-				ppl.classroom_id << ((i % @school.number_of_classrooms) + 1)
-				buffer_m += 1
-				if buffer_m == @malePupilsPerClassroom
-					i+=1
-				end
-			elsif
-				ppl.classroom_id << ((j % @school.number_of_classrooms) + 1)
-				buffer_f += 1
-				if buffer_f == @femalePupilsPerClassroom
-					j+=1
-				end
-			end			
-		end
-
-		#redirect_to school_path, :notice => "Students distributed!"
+		Pupil.distribute_pupil_for school
 	end
 
 
