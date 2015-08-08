@@ -26,4 +26,8 @@ RailsDevisePundit::Application.routes.draw do
 		resources :pupils
 	end
 
+	resources :schools do
+		resources :classrooms
+	end
+
 end

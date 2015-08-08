@@ -14,4 +14,12 @@ class School < ActiveRecord::Base
 			)		
 	end
 	
+	def self.create_classrooms (school)
+		name_of_class = (1 % school.number_of_classrooms) + 1
+		Classroom.create(
+			name: name_of_class,
+			school_id: school.id
+		)
+	end
+
 end

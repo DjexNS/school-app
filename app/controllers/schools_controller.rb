@@ -10,23 +10,29 @@ class SchoolsController < ApplicationController
 
 
 	def new
-		@school = School.new		
+		@school = School.new
 	end
 
 
-	def create 
-		@school = School.new(school_params) 
-		if @school.save 
-		  redirect_to action: :show, id: @school.id, notice: "New school created!"
-		else 
-		  render 'new' 
+	def create
+		@school = School.new(school_params)
+		
+		if @school.save
+			redirect_to action: :show, id: @school.id, notice: "New school created!" and return
+		else
+			render 'new'
 		end			
+
+		school = School.find(params[:id])
+		school.number_of_classrooms.times do
+			School.create_classrooms (school)
+		end
 	end
 
 
 	def show
 		@school = School.find(params[:id])
-		redirect_to controller: 'pupils', action: 'index', school_id: params[:id]		
+		redirect_to controller: 'pupils', action: 'index', school_id: params[:id]
 	end
 
 
@@ -53,13 +59,13 @@ class SchoolsController < ApplicationController
 
 	def generate
 		@total_pupils = rand(90..110)
-		school = School.find(params[:id])		
-		
+		school = School.find(params[:id])
+
 		@total_pupils.times do
 			School.generate_pupil_for school
 		end
 
-		redirect_to school_path, notice: "#{@total_pupils} students generated!"		
+		redirect_to school_path, notice: "#{@total_pupils} students generated!"
 	end
 
 
@@ -70,6 +76,6 @@ class SchoolsController < ApplicationController
 
 	def record_not_found
 		render file: 'public/404'
-  	end
+	end
 
 end

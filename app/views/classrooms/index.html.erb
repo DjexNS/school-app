@@ -1,9 +1,15 @@
 <h2>Classrooms:</h2>
+------------
+	<% @classrooms.each do |classroom| %> 
+		<div class="classroom"> 
+			<p class="id">Classroom ID: <%= classroom.id %></p> 
+			<p class="name">Name of the classroom: <%= classroom.name %></p> 
+			<p class="school">School ID: <%= classroom.school_id %></p>
 
-<div class="classrooms">
-  <div class="container">
-		</br>
-		<br>	------------------------------------------------------------
-	
-	</div> 
-</div> 
+			<p class="count">Number of pupils: <%= @total_count %></p> 
+		<%= link_to 'Show Classroom', :action => :show, :id => classroom.id %>
+ 	</br>
+	<br>	------------------------------------------------------------
+		</div> 
+
+		<% end %>

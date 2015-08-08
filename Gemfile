@@ -23,7 +23,6 @@ group :development do
 end
 
 group :test do
-  gem "factory_girl_rails"
   gem "cucumber-rails", :require => false
   gem "database_cleaner"
   gem "selenium-webdriver"
@@ -34,7 +33,6 @@ group :test do
   gem "launchy"
   gem "webmock"
   gem 'simplecov', :require => false
-  gem "rspec-rails"
   gem "spork-rails"
   gem "minitest"
 end
@@ -42,4 +40,6 @@ end
 group :test, :development do
   gem "pry"
   gem "awesome_print"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
 end
